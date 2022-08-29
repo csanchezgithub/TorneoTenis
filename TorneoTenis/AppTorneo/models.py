@@ -11,7 +11,7 @@ class Torneo(models.Model):
     detalle= models.CharField(max_length=300)     #texto libre de lo que quieran escribir
 
     def __str__(self):
-        return f"Numero de torneo: {self.numero} - Categoria: {self.categoria} - Nombre: {self.nombre}"
+        return f"NUMERO: {self.numero} - CATEGORIA: {self.categoria} - NOMBRE: {self.nombre} - INICIO/FIN: {self.fecha_inicio} al {self.fecha_fin} - Tipo: {self.tipo}- Detalle: {self.detalle}"
 
 
 
@@ -24,7 +24,7 @@ class ListaJugadores(models.Model):
     email= models.EmailField()
 
     def __str__(self):
-        return f"Nombre jugador: {self.nombre} {self.apellido}- DNI: {self.dni} - Fecha Nacimiento: {self.fecha_nacimiento}"
+        return f"Nombre jugador: {self.nombre} {self.apellido} - DNI: {self.dni} - Fecha Nacimiento: {self.fecha_nacimiento} - Celular: {self.celular} - Mail: {self.email}"
 
 
 
@@ -54,6 +54,6 @@ class Partidos(models.Model):
     dni_ganador = models.IntegerField() 
 
     def __str__(self):
-        return f"Numero Torneo: {self.numero_torneo} - Numero Partido: {self.numero_partido} - Ronda: {self.ronda} - DNI ganador:  {self.dni_ganador}"
+        return f"Numero Torneo: {self.numero_torneo} - Numero Partido: {self.numero_partido} - Ronda: {self.ronda} - DNI ganador:  {self.dni_ganador} - FECHA: {self.fecha_partido} - RESULTADO: {self.jugador1_set_1}-{self.jugador2_set_1}  {self.jugador1_set_2}-{self.jugador2_set_2}  {self.jugador1_Tiebreak}-{self.jugador2_Toebreak}"
 
 
