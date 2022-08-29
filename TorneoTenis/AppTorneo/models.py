@@ -54,6 +54,6 @@ class Partidos(models.Model):
     dni_ganador = models.IntegerField() 
 
     def __str__(self):
-        return f"Numero Torneo: {self.numero_torneo} - Numero Partido: {self.numero_partido} - Ronda: {self.ronda} - DNI ganador:  {self.dni_ganador} - FECHA: {self.fecha_partido} - RESULTADO: {self.jugador1_set_1}-{self.jugador2_set_1}  {self.jugador1_set_2}-{self.jugador2_set_2}  {self.jugador1_Tiebreak}-{self.jugador2_Toebreak}"
+        return f"Numero Torneo: {self.numero_torneo} - Numero Partido: {self.numero_partido} - Ronda: {self.ronda} - DNI ganador:  {self.dni_ganador} - FECHA: {self.fecha_partido} - RESULTADO: {self.jugador1_set_1}-{self.jugador2_set_1}  {self.jugador1_set_2}-{self.jugador2_set_2} Tiebreak: {self.jugador1_Tiebreak}-{self.jugador2_Toebreak}"
 
 
