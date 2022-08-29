@@ -13,28 +13,21 @@ def inicio(request):
       #return HttpResponse (a)
       return render(request, "AppTorneo/inicio.html")
 
+def torneos(request):
+      return render(request, "AppTorneo/torneo.html")
+
 def listaJugadores(request):
-     # a = "Hola mundo - esta es la vista de los JUGADORES"
-#      return HttpResponse (a)
       return render(request, "AppTorneo/listajugadores.html")
 
 def partidos(request):
-     # a = "Hola mundo - esta es la vista de los Partidos"
-#      return HttpResponse (a)
       return render(request, "AppTorneo/partidos.html")
 
-def torneos(request):
-      #a = "Hola mundo - esta es la vista de los Torneos"
-#      return HttpResponse (a)
-      return render(request, "AppTorneo/torneo.html")
-
 def torneoJugadores(request):
-      #a = "Hola mundo - esta es la vista de los Jugadores anotados en un torneo"
-#      return HttpResponse (a)
       return render(request, "AppTorneo/torneojugadores.html")
 
+
 #
-#   vistas para los formularios
+#----------   vistas para los formularios TORNEO  ----------------------
 #
 def TORNEOformulario(request):
       if request.method == 'POST':
@@ -55,6 +48,17 @@ def TORNEOformulario(request):
       
       return render(request, "AppTorneo/torneoFormulario.html", {"MiFormulario": MiFormulario})
 
+def busquedaTorneo(request): 
+      return render(request, "AppTorneo/busquedaTorneo.html")
+
+def buscar(request):
+      respuesta = f"Estoy buscando el torneo nro: {request.GET['numero']}"
+      
+      return HttpResponse(respuesta)
+
+
+
+#--------------------------------------------------------------------
 
 def torneoJugadoresFormulario(request):
       return render(request, "AppTorneo/torneoJugadoresFormulario.html")

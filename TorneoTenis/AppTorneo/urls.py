@@ -15,4 +15,7 @@ urlpatterns = [
     path('listajugadoresFormulario', views.jugadoresFormulario, name="listaJugadoresFormulario"),
     path('torneojugadoresFormulario', views.torneoJugadoresFormulario, name="torneojugadoresFormulario"),
     path('partidosFormulario', views.partidosFormulario, name="partidosFormulario"),
+    path('busquedaTorneo', views.busquedaTorneo, name="BusquedaTorneo"),
+    path('buscar/', views.buscar),
+
 ]
