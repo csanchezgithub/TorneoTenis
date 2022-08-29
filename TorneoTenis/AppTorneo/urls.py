@@ -11,7 +11,7 @@ urlpatterns = [
     path('torneojugadores', views.torneoJugadores, name="torneojugadores"),
     path('partidos', views.partidos, name="partidos"),
 
-    path('torneoFormulario', views.torneoFormulario, name="torneoFormulario"),
+    path('torneoFormulario', views.TORNEOformulario, name="torneoFormulario"),
     path('listajugadoresFormulario', views.jugadoresFormulario, name="listaJugadoresFormulario"),
     path('torneojugadoresFormulario', views.torneoJugadoresFormulario, name="torneojugadoresFormulario"),
     path('partidosFormulario', views.partidosFormulario, name="partidosFormulario"),

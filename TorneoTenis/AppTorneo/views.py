@@ -3,7 +3,7 @@ from django.http.request import QueryDict
 from django.shortcuts import render, HttpResponse
 from django.http import HttpResponse
 from AppTorneo.models import Torneo, Torneo_Inscriptos, ListaJugadores, Partidos
-#from AppTorneo.forms import TorneoFormulario, Torneo_InscriptosFormulario, ListaJugadoresFormulario, PartidosFormulario
+from AppTorneo.forms import torneoFormulario
 
 
 # Create your views here.
@@ -36,16 +36,25 @@ def torneoJugadores(request):
 #
 #   vistas para los formularios
 #
-def torneoFormulario(request):
+def TORNEOformulario(request):
       if request.method == 'POST':
-            curso = Torneo(request.post['numero'],
-                  request.post['nombre'],
-                  request.post['categoria'], 
-                  request.post['detalle'])
-            curso.save()
-            return render(request, "AppTorneo/inicio.html")
+
+            MiFormulario = torneoFormulario(request.POST)
+            print (MiFormulario)
+
+            if MiFormulario.is_valid:
+                  informacion = MiFormulario.cleaned_data
+                  torneo = Torneo(numero=informacion["numero"], nombre= informacion["nombre"], 
+                           categoria=informacion["categoria"], detalle=informacion["detalle"],
+                           fecha_inicio = informacion["fecha_inicio"], fecha_fin=informacion["fecha_fin"],
+                           tipo=informacion["tipo"])
+                  torneo.save()
+                  return render(request, "AppTorneo/inicio.html")
+      else:
+            MiFormulario = torneoFormulario()
       
-      return render(request, "AppTorneo/torneoFormulario.html")
+      return render(request, "AppTorneo/torneoFormulario.html", {"MiFormulario": MiFormulario})
+
 
 def torneoJugadoresFormulario(request):
       return render(request, "AppTorneo/torneoJugadoresFormulario.html")

@@ -6,3 +6,7 @@ class torneoFormulario(forms.Form):
     nombre = forms.CharField()
     categoria= forms.CharField()
     detalle= forms.CharField()
+    tipo= forms.CharField()
+    fecha_inicio = forms.DateField()
+    fecha_fin= forms.DateField()
+    
