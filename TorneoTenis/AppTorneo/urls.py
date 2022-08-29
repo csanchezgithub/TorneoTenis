@@ -10,4 +10,9 @@ urlpatterns = [
     path('listajugadores', views.listaJugadores, name="listaJugadores"),
     path('torneojugadores', views.torneoJugadores, name="torneojugadores"),
     path('partidos', views.partidos, name="partidos"),
+
+    path('torneoFormulario', views.torneoFormulario, name="torneoFormulario"),
+    path('listajugadoresFormulario', views.jugadoresFormulario, name="listaJugadoresFormulario"),
+    path('torneojugadoresFormulario', views.torneoJugadoresFormulario, name="torneojugadoresFormulario"),
+    path('partidosFormulario', views.partidosFormulario, name="partidosFormulario"),
 ]

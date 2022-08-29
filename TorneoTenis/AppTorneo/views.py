@@ -32,3 +32,26 @@ def torneoJugadores(request):
       #a = "Hola mundo - esta es la vista de los Jugadores anotados en un torneo"
 #      return HttpResponse (a)
       return render(request, "AppTorneo/torneojugadores.html")
+
+#
+#   vistas para los formularios
+#
+def torneoFormulario(request):
+      if request.method == 'POST':
+            curso = Torneo(request.post['numero'],
+                  request.post['nombre'],
+                  request.post['categoria'], 
+                  request.post['detalle'])
+            curso.save()
+            return render(request, "AppTorneo/inicio.html")
+      
+      return render(request, "AppTorneo/torneoFormulario.html")
+
+def torneoJugadoresFormulario(request):
+      return render(request, "AppTorneo/torneoJugadoresFormulario.html")
+
+def jugadoresFormulario (request):
+      return render(request, "AppTorneo/jugadoresFormulario.html")
+
+def partidosFormulario (request):
+      return render(request, "AppTorneo/partidosFormulario.html")
