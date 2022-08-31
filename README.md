@@ -1,8 +1,5 @@
-# TorneoTenis
-El proyecto tiene la idea de poder administrar los torneos de tenis de un club
-
-Readme:
-Es una aplicacion para registrar informacion de Torneo de Tenis, incluye 4 clases.
+# TorneoTenis 
+El proyecto tiene la aplicacion web AppTorneo, la idea de la misma es poder administrar los torneos de tenis de un club.
 
 Tiene los siguientes formularios para dar insertar datos en cada una:
 - Torneos   (datos de los torneos que se organizan)
