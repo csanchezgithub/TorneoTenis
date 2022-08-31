@@ -52,9 +52,19 @@ def busquedaTorneo(request):
       return render(request, "AppTorneo/busquedaTorneo.html")
 
 def buscar(request):
-      respuesta = f"Estoy buscando el torneo nro: {request.GET['numero']}"
-      
+      #respuesta = f"Estoy buscando el torneo nro: {request.GET['numero']}"
+      if request.GET['numero']:
+            numero = request.GET['numero']
+            torneo_buscado = Torneo.objects.filter(numero__icontains=numero)
+
+            return render(request, "AppTorneo/resultadoBusquedaTorneo.html", {"torneo_buscado": torneo_buscado, "numero": numero})
+
+      else:
+            respuesta = "No existen datos"
+
+
       return HttpResponse(respuesta)
+
 
 
 

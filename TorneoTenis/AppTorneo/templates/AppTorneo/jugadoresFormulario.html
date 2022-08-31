@@ -1,0 +1,13 @@
+{% extends 'AppTorneo/padre.html'%}
+{% load static %}
+        
+{% block contenidoQueCambia %}       
+        {% if MiFormulario.errors %}
+            <p style="color: red;"> Están mal los datos, revisar</p>
+        {% endif %}
+        
+        <form action="" method="POST">{% csrf_token %}
+            <table>{{ MiFormulario.as_table }}</table>
+            <input type="submit" value="Enviar" />
+        </form>
+        {% endblock %}
