@@ -12,8 +12,8 @@ Tambien se incluye un formulario para buscar un Torneo por numero, y me devuelve
 Las url para ejecutar son:
 
 /AppTorneo/                              -> Para abrir la aplicacion web
-/AppTorneo/torneoForumulario             -> insertar torneos
-/AppTorneo/listajugadoresForumulario     -> insertar jugadores
-/AppTorneo/torneojugadoresForumulario    -> insertar jugadores a un torneo
-/AppTorneo/partidosForumulario           -> cargar resultados de un partido 
+/AppTorneo/torneoFormulario             -> insertar torneos
+/AppTorneo/listajugadoresFormulario     -> insertar jugadores
+/AppTorneo/torneojugadoresFormulario    -> insertar jugadores a un torneo
+/AppTorneo/partidosFormulario           -> cargar resultados de un partido 
 /AppTorneo/busquedaTorneo		 -> buscar los datos de un torneo
