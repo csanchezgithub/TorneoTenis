@@ -5,6 +5,7 @@
     <h3> Resultado de la busqueda:  </h3>
     {% if torneo_buscado %}
 
+        
     <ul>
         {% for torneo in torneo_buscado %}
            <h1> Torneo: {{torneo.numero}} </h1>
@@ -14,7 +15,8 @@
             <li> <h5> Fecha Inicio: {{torneo.fecha_inicio}}</li></h5>
             <li> <h5> Fecha Finalizacion: {{torneo.fecha_fin}}</li></h5>
             <li> <h5> Detalle: {{torneo.detalle}}</li></h5>
-                 
+    
+            
         {% endfor %}
 
     </ul>

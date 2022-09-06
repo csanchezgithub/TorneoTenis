@@ -11,12 +11,17 @@ urlpatterns = [
     path('torneojugadores', views.torneoJugadores, name="torneojugadores"),
     path('partidos', views.partidos, name="partidos"),
 
-    path('torneoFormulario', views.TORNEOformulario, name="torneoFormulario"),
-    path('listajugadoresFormulario', views.JUGADORESformulario, name="listaJugadoresFormulario"),
-    path('torneojugadoresFormulario', views.TORNEOJugadoresFormulario, name="torneojugadoresFormulario"),
-    path('partidosFormulario', views.PARTIDOSFormulario, name="partidosFormulario"),
+    path('altatorneo', views.TORNEOformulario, name="torneoFormulario"),
+    path('altajugadores', views.JUGADORESformulario, name="listaJugadoresFormulario"),
+    path('altajugadorestorneo', views.TORNEOJugadoresFormulario, name="torneojugadoresFormulario"),
+    path('altapartidos', views.PARTIDOSFormulario, name="partidosFormulario"),
     
     path('busquedaTorneo', views.busquedaTorneo, name="BusquedaTorneo"),
     path('buscar/', views.buscar),
+
+    path('leerTorneos', views.leerTORNEOS, name="LeerTorneos"),
+    path('leerJugadores', views.leerJUGADORES, name="LeerJugadores"),
+    path('leerJugadoresTorneos', views.leerJUGADORES_TORNEOS, name="LeerJugadoresTorneos"),
+    path('leerPartidos', views.leerPARTIDOS, name="LeerPartidos"),
 
 ]

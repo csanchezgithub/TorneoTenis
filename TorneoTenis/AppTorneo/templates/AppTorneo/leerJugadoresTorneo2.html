@@ -1,0 +1,24 @@
+
+
+<!--   este html no se esta usando por ahora, porque no se como hacer cuando una tabla para una busqueda  -->
+<!--    devuelve muchos registros, ya que me da error -->
+
+{% extends 'AppTorneo/padre.html'%}
+{% load static %}
+        
+{% block contenidoQueCambia %}   
+<h3> Resultado de la busqueda:  </h3>
+{% if torneo_buscado %}
+
+    
+<ul>
+    {% for torneo in torneo_buscado %}
+       <h1> Torneo: {{torneo.numero_torneo}} </h1>
+        <li> <h5> DNI: {{torneo.dni_jugador}}</li></h5>
+        
+        
+    {% endfor %}
+
+</ul>
+{% endif %}
+{% endblock %}

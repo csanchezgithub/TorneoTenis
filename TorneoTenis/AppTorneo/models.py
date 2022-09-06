@@ -11,7 +11,7 @@ class Torneo(models.Model):
     detalle= models.CharField(max_length=300)     #texto libre de lo que quieran escribir
 
     def __str__(self):
-        return f"NUMERO: {self.numero} - CATEGORIA: {self.categoria} - NOMBRE: {self.nombre} - INICIO/FIN: {self.fecha_inicio} al {self.fecha_fin} - Tipo: {self.tipo}- Detalle: {self.detalle}"
+        return f"NUMERO: {self.numero} - CATEGORIA: {self.categoria} - INICIO/FIN: {self.fecha_inicio} al {self.fecha_fin} - TIPO: {self.tipo} - NOMBRE: {self.nombre}  - DETALLE: {self.detalle}"
 
 
 

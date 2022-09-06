@@ -27,8 +27,9 @@ def torneoJugadores(request):
 
 
 #
-#----------   vistas para los formularios TORNEO  ----------------------
-#
+#----------------------------------------------------------
+#----------   vistas para los TORNEOS  --------------------
+#----------------------------------------------------------
 def TORNEOformulario(request):
       if request.method == 'POST':
 
@@ -46,7 +47,7 @@ def TORNEOformulario(request):
       else:
             MiFormulario = torneoFormulario()
       
-      return render(request, "AppTorneo/torneoFormulario.html", {"MiFormulario": MiFormulario})
+      return render(request, "AppTorneo/crear_torneo_Formulario.html", {"MiFormulario": MiFormulario})
 
 def busquedaTorneo(request): 
       return render(request, "AppTorneo/busquedaTorneo.html")
@@ -56,18 +57,22 @@ def buscar(request):
       if request.GET['numero']:
             numero = request.GET['numero']
             torneo_buscado = Torneo.objects.filter(numero__icontains=numero)
-
-            return render(request, "AppTorneo/resultadoBusquedaTorneo.html", {"torneo_buscado": torneo_buscado, "numero": numero})
+            return render(request, "AppTorneo/busquedaTorneoResultados.html", {"torneo_buscado": torneo_buscado, "numero": numero})
 
       else:
             respuesta = "No existen datos"
+            return HttpResponse(respuesta)
 
 
-      return HttpResponse(respuesta)
+def leerTORNEOS(request):
+      todos_los_torneos = Torneo.objects.all() #trae todos los torneos     
+      contexto= {"Los_torneos":todos_los_torneos}
+      return render(request, "AppTorneo/leerTorneos.html",contexto)
 
 
-
+#----------------------------------------------------------
 #------------ Vistas para la lista de jugadores posibles  ---------------------------------------------------
+#----------------------------------------------------------
 def JUGADORESformulario (request):
       if request.method == 'POST':
 
@@ -84,11 +89,18 @@ def JUGADORESformulario (request):
       else:
             MiFormulario = jugadoresFormulario()
       
-      return render(request, "AppTorneo/jugadoresFormulario.html", {"MiFormulario": MiFormulario})
-      
+      return render(request, "AppTorneo/crear_jugadores_Formulario.html", {"MiFormulario": MiFormulario})
 
 
+def leerJUGADORES(request):
+      todos_los_jugadores = ListaJugadores.objects.all() #trae todos los torneos
+      contexto= {"Los_jugadores":todos_los_jugadores}
+      return render(request, "AppTorneo/leerListaJugadores.html",contexto)
+
+
+#----------------------------------------------------------
 #------------ Vistas para los jugadores de un Torneo --------------------------------------------------------
+#----------------------------------------------------------
 def TORNEOJugadoresFormulario(request):
       if request.method == 'POST':
 
@@ -104,12 +116,21 @@ def TORNEOJugadoresFormulario(request):
       else:
             MiFormulario = torneoInscriptosFormulario()
       
-      return render(request, "AppTorneo/torneoJugadoresFormulario.html", {"MiFormulario": MiFormulario})
+      return render(request, "AppTorneo/crear_torneoJugadores_Formulario.html", {"MiFormulario": MiFormulario})
       
 
+def leerJUGADORES_TORNEOS(request):
+#      numero_torneo = request.GET['numero']
+#      torneo_buscado = Torneo_Inscriptos.objects.filter(numero_torneo__icontains=numero_torneo)
+#      return render(request, "AppTorneo/leerJugadoresTorneo2.html", {"torneo_buscado": torneo_buscado, "numero": numero_torneo})
+      jugadores_de_torneos = Torneo_Inscriptos.objects.all() #trae todos los torneos
+      contexto= {"Los_jugadoresTorneos":jugadores_de_torneos}
+      return render(request, "AppTorneo/leerJugadoresTorneo.html",contexto)
 
+
+#----------------------------------------------------------
 #------------ Vistas para Partidos --------------------------------------------------------
-
+#----------------------------------------------------------
 def PARTIDOSFormulario (request):
       if request.method == 'POST':
 
@@ -137,5 +158,10 @@ def PARTIDOSFormulario (request):
       else:
             MiFormulario = partidosFormulario()
       
-      return render(request, "AppTorneo/partidosFormulario.html", {"MiFormulario": MiFormulario})
+      return render(request, "AppTorneo/crear_partidos_Formulario.html", {"MiFormulario": MiFormulario})
  
+
+def leerPARTIDOS(request):
+      todos_los_partidos = Partidos.objects.all() #trae todos los torneos
+      contexto= {"Los_partidos":todos_los_partidos}
+      return render(request, "AppTorneo/leerPartidos.html",contexto)

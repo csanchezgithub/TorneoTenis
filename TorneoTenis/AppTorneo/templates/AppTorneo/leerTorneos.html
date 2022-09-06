@@ -1,0 +1,13 @@
+
+{% extends 'AppTorneo/padre.html'%}
+{% load static %}
+    
+{% block contenidoQueCambia %}
+
+    <h1>Lista de Torneos Organizados</h1>
+    
+    {% for p in Los_torneos %}
+        <li>{{p}}     </li>
+    {% endfor %}
+
+{% endblock %}
