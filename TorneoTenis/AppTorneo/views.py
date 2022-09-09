@@ -13,18 +13,6 @@ def inicio(request):
       #return HttpResponse (a)
       return render(request, "AppTorneo/inicio.html")
 
-def torneos(request):
-      return render(request, "AppTorneo/torneo.html")
-
-def listaJugadores(request):
-      return render(request, "AppTorneo/listajugadores.html")
-
-def partidos(request):
-      return render(request, "AppTorneo/partidos.html")
-
-def torneoJugadores(request):
-      return render(request, "AppTorneo/torneojugadores.html")
-
 
 #
 #----------------------------------------------------------
@@ -69,6 +57,15 @@ def leerTORNEOS(request):
       contexto= {"Los_torneos":todos_los_torneos}
       return render(request, "AppTorneo/leerTorneos.html",contexto)
 
+def eliminarTORNEO(request, numero_torneo):
+      torneo = Torneo.objects.get(numero=numero_torneo)
+      torneo.delete()
+      # vuelvo al menú
+      todos_los_torneos = Torneo.objects.all() # trae todos los torneos
+      contexto = {"Los_torneos": todos_los_torneos}
+      return render(request, "AppTorneo/leerTorneos.html", contexto)
+
+
 
 #----------------------------------------------------------
 #------------ Vistas para la lista de jugadores posibles  ---------------------------------------------------
@@ -96,6 +93,16 @@ def leerJUGADORES(request):
       todos_los_jugadores = ListaJugadores.objects.all() #trae todos los torneos
       contexto= {"Los_jugadores":todos_los_jugadores}
       return render(request, "AppTorneo/leerListaJugadores.html",contexto)
+
+
+def eliminarJUGADOR(request, dni):
+      jugador = ListaJugadores.objects.get(dni=dni)
+      jugador.delete()
+      # vuelvo al menú
+      jugadores = ListaJugadores.objects.all() # trae todos los torneos
+      contexto = {"Los_jugadores": jugadores}
+      return render(request, "AppTorneo/leerListaJugadores.html", contexto)
+
 
 
 #----------------------------------------------------------

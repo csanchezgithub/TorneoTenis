@@ -3,8 +3,15 @@
     
 {% block contenidoQueCambia %}
     <h1>Lista de Jugadores General</h1>
+ 
+
     {% for p in Los_jugadores %}
-        <li>{{p}}     </li>
+        <li>{{p}}</li>
+        <button>
+            <a href="{% url 'EliminarJugador' p.dni %}"> Eliminar</a>
+        </button>   
     {% endfor %}
-    
+    <br>
+    <a href="{% url 'listaJugadoresFormulario' %}">Agregar otro Jugador</a>
+
 {% endblock %}

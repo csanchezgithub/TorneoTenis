@@ -6,8 +6,14 @@
 
     <h1>Lista de Torneos Organizados</h1>
     
+  
     {% for p in Los_torneos %}
-        <li>{{p}}     </li>
+        <li>{{p}}</li>
+        <button>
+            <a href="{% url 'EliminarTorneo' p.numero %}"> Eliminar</a>
+        </button>   
     {% endfor %}
+    <br>
+    <a href="{% url 'torneoFormulario' %}">Agregar otro Torneo</a>
 
 {% endblock %}
