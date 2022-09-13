@@ -3,13 +3,15 @@
 
 {% block contenidoQueCambia %}
 
+<h2><p style =color:green> {{mensaje}}</h2>
+
 <h1>Inicio</h1>
-<p>Para realizar la carga de datos se puede usar las siguientes url en el navegador:</p>
+<h4>Se puede navegar el menu para consultar los datos y tambien, desde cada consulta se puede agregar nuevos datos de los Torneos.</h4>
  
-    <li> /AppTorneo/altatorneo             <p style =color:blue>    -> Para insertar datos de los torneos
-    <li> /AppTorneo/altajugadores          <p style =color:blue>    -> Para insertar datos de jugadores
-    <li> /AppTorneo/altajugadorestorneo    <p style =color:blue>    -> Para insertar datos de los jugadores inscriptos a un torneo
-    <li> /AppTorneo/altapartidos           <p style =color:blue>    -> Para cargar resultados de un partido 
-    <li> /AppTorneo/busquedaTorneo     	   <p style =color:blue> -> Para buscar los datos de un torneo
+  <h6> <p style =color:blue> - Jugadores: <p style =color:grey> Muestra toda la lista de jugadores que conocemos y tenemos agendados.
+  <h6> <p style =color:blue> - Torneos: <p style =color:grey> Muestra la lista de Torneos que organizamos 
+  <h6> <p style =color:blue> - Buscar Torneo: <p style =color:grey>  Busca los datos especificos de un torneo
+  <h6> <p style =color:blue> - Torneo Jugadores: <p style =color:grey> Muestra la lista de Jugadores que se inscribieron en cada Torneo 
+  <h6> <p style =color:blue> - Partidos: <p style =color:grey> Muestra la lista de Partidos jugados y sus resultados 
 </p>
 {% endblock %}

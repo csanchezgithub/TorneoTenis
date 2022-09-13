@@ -2,7 +2,7 @@
     {% load static %}
             
     {% block contenidoQueCambia %}   
-    <h3> Resultado de la busqueda:  </h3>
+    
     {% if torneo_buscado %}
 
         
@@ -20,5 +20,8 @@
         {% endfor %}
 
     </ul>
+
+    <a href="{% url 'BusquedaTorneo'%}">Presione aqui para buscar otro torneo.</a>
+    
     {% endif %}
     {% endblock %}

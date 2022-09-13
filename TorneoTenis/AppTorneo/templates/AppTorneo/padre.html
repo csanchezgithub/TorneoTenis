@@ -27,9 +27,22 @@
                 <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>´
                 <a class="navbar-brand" href="{% url 'LeerJugadores' %}">Jugadores</a>
                 <a class="navbar-brand" href="{% url 'LeerTorneos' %}">Torneos</a>
+                <a class="navbar-brand" href="{% url 'BusquedaTorneo' %}">Buscar Torneo</a>
                 <a class="navbar-brand" href="{% url 'LeerJugadoresTorneos' %}">Torneo Jugadores</a>
                 <a class="navbar-brand" href="{% url 'LeerPartidos' %}">Partidos</a>
                 
+                <a class="navbar-brand" href="{% url 'EditarPerfil' %}">EDITAR USER</a> 
+
+                <a class="navbar-brand" href="{% url 'Logout' %}">SALIR</a> 
+
+                {% if not request.user.is_authenticated %}
+                <li class="sidebar-nav-item"><a href="{% url 'Login' %}">HACER LOGIN</a></li>
+                {% endif %}
+           
+                {% if  request.user.is_authenticated %}
+                <h3 style="margin-bottom: 0;">{{user.username}}</h3>
+                {% endif %}
+
             </div>
         </nav>
 

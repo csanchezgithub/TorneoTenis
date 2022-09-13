@@ -9,6 +9,7 @@
         <li>{{p}}</li>
         <button>
             <a href="{% url 'EliminarJugador' p.dni %}"> Eliminar</a>
+            <a href="{% url 'EditarJugador' p.dni %}"> Editar</a>
         </button>   
     {% endfor %}
     <br>

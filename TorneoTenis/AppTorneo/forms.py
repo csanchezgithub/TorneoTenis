@@ -2,6 +2,9 @@
 from asyncio.windows_events import NULL
 from django import forms
 
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+
 class torneoFormulario(forms.Form):
     numero = forms.IntegerField()
     nombre = forms.CharField()
@@ -39,5 +42,31 @@ class partidosFormulario (forms.Form):
     jugador2_Tiebreak = forms.IntegerField(required=False)
     jugador1_Tiebreak = forms.IntegerField(required=False)
     dni_ganador = forms.IntegerField()
+
+
+class Registro_Usuario_Formulario(UserCreationForm):
+    email = forms.EmailField()
+    password1 = forms.CharField(label="Contraseña", widget=forms.PasswordInput)
+    password2 = forms.CharField(label="Repetir contraseña", widget=forms.PasswordInput)
+
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
+        # Saca los mensajes de ayuda
+        help_texts = {k:"" for k in fields}
+
+
+class Editar_Perfil_Usuario(UserCreationForm):
+
+    email = forms.EmailField(label="Ingrese su email:")
+    password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
+    password2 = forms.CharField(label='Repetir la contraseña', widget=forms.PasswordInput)
+
+    last_name = forms.CharField()
+    first_name = forms.CharField()
+
+    class Meta:
+        model = User
+        fields = ['email', 'password1', 'password2', 'last_name', 'first_name']
 
 
