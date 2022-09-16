@@ -1,4 +1,6 @@
 # TorneoTenis 
+Realizado por:  Claudia B Sanchez.
+
 El proyecto tiene la aplicacion web AppTorneo, la idea de la misma es poder administrar los torneos de tenis de un club.
 
 Tiene los siguientes formularios:
