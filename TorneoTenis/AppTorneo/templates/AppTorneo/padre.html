@@ -40,9 +40,13 @@
                 {% endif %}
            
                 {% if  request.user.is_authenticated %}
+                <!--img src="{{(Avatar.objects.filter(user = request.user.id).imagen.url)}" />  -->
                 <h3 style="margin-bottom: 0;">{{user.username}}</h3>
-                {% endif %}
+                {% endif %}   
 
+                {% load static %}
+
+                <img src="{% static 'AppTorneo/assets/img/clau.jpg' %}"   height="100"  alt="">
             </div>
         </nav>
 

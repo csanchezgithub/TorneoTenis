@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Torneo(models.Model):
@@ -57,3 +58,9 @@ class Partidos(models.Model):
         return f"Nro_Torneo: {self.numero_torneo} - Nro_Partido: {self.numero_partido} - Ronda: {self.ronda} - DNI ganador:  {self.dni_ganador} - FECHA: {self.fecha_partido} - RESULTADO: {self.jugador1_set_1}-{self.jugador2_set_1}  {self.jugador1_set_2}-{self.jugador2_set_2} Tiebreak: {self.jugador1_Tiebreak}-{self.jugador2_Toebreak} Jugador 1: {self.dni_jugador_1} Jugador 2: {self.dni_jugador_2} Ausente_Jug_1: {self.jugador1_ausente} Ausente_Jug_2: {self.jugador2_ausente}"
 
 
+class Avatar(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    imagen = models.ImageField(upload_to='avatares', null=True, blank = True)
+
+    def __str__(self):
+        return f"{self.user} - {self.imagen}"
