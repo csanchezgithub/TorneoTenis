@@ -32,5 +32,6 @@ urlpatterns = [
     path('logout', LogoutView.as_view(template_name='AppTorneo/logout.html'), name='Logout'),
     path('editarPerfil', views.editarPerfil, name="EditarPerfil"),
 
-    
+    path('AcercaDeMI', views.acercaDeMi, name="AcercaDeMi"),
+    path('Ayuda', views.ayuda, name="Ayuda"),
 ]

@@ -9,5 +9,6 @@
         <form action="" method="POST">{% csrf_token %}
             <table>{{ MiFormulario.as_table }}</table>
             <input type="submit" value="Enviar" />
+            <input type="submit" value="Cancelar" />
         </form>
         {% endblock %}

@@ -7,6 +7,13 @@
     <title>Ingreso a Torneos de Tenis</title>
 </head>
 <body>
+    <h1>Ingrese Usuario y contraseña para entrar a la aplicacion de Torneos</h1>
+
+    {% load static %}
+    <img src="{% static 'AppTorneo/assets/img/lasallelogonvo.jpg' %}"   height="100"  alt="">
+    
+    Si no tiene usuario registrarse aqui: <a class="navbar-brand" href="{% url 'Register' %}">Registrate</a> 
+
     <h2><p style =color:green> {{mensaje}}</h2>
     
         <form action="" method="POST">
@@ -16,5 +23,6 @@
             <button type="submit">Iniciar sesion</button>
     
         </form>
+    
 </body>
 </html>

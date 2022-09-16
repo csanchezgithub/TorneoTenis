@@ -24,7 +24,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>´
+                <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
                 <a class="navbar-brand" href="{% url 'LeerJugadores' %}">Jugadores</a>
                 <a class="navbar-brand" href="{% url 'LeerTorneos' %}">Torneos</a>
                 <a class="navbar-brand" href="{% url 'BusquedaTorneo' %}">Buscar Torneo</a>
@@ -91,9 +91,9 @@
                 <div class="row">
                     <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
                         <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><a href="#!">Ayuda</a></li>
+                            <li class="list-inline-item"><a href="{% url 'Ayuda' %}">Ayuda</a></li>
                             <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Contacto</a></li>
+                            <li class="list-inline-item"><a  href="{% url 'AcercaDeMi' %}">Acerca de mí</a></li>
                       
                         </ul>
                         <p class="text-muted small mb-4 mb-lg-0">&copy; Curso de Python - Claudia</p>

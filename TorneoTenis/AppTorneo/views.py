@@ -10,10 +10,15 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def inicio(request):
-      #a = "Hola mundo - esta es la vista de INICIO"
-      #return HttpResponse (a)
       return render(request, "AppTorneo/inicio.html")
 
+@login_required
+def acercaDeMi(request):
+      return render(request, "AppTorneo/acerca_de_mi.html")
+
+@login_required
+def ayuda(request):
+      return render(request, "AppTorneo/ayuda.html")
 
 #
 #----------------------------------------------------------
